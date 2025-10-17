@@ -7,18 +7,12 @@
 
 get_header();
 
-$identity = null;
-if (class_exists('HCISYSQ\\Auth') && method_exists('HCISYSQ\\Auth', 'current_identity')) {
-    $identity = \HCISYSQ\Auth::current_identity();
-}
-
-$is_hcis_logged_in    = !empty($identity);
+$is_authenticated     = apply_filters('ysq_theme_is_authenticated', is_user_logged_in());
 $can_render_dashboard = shortcode_exists('hcisysq_dashboard');
-$can_render_login     = shortcode_exists('hcisysq_login');
 
 $ysq_publications = null;
 
-if (!$is_hcis_logged_in) {
+if (!$is_authenticated) {
     $ysq_publications = new WP_Query(
         array(
             'post_type'      => 'publikasi',
@@ -32,7 +26,7 @@ if (!$is_hcis_logged_in) {
 ?>
 
 <div class="content-wrapper">
-    <?php if ($is_hcis_logged_in && $can_render_dashboard) : ?>
+    <?php if ($is_authenticated && $can_render_dashboard) : ?>
         <?php echo do_shortcode('[hcisysq_dashboard]'); ?>
     <?php else : ?>
         <div class="public-dashboard">

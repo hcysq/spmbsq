@@ -36,14 +36,7 @@
         $main_button_text = trim(get_theme_mod('ysq_main_site_button_text', 'Kembali ke Situs Utama'));
         $main_button_url  = trim(get_theme_mod('ysq_main_site_button_url', 'https://sabilulquran.or.id'));
 
-        $identity = null;
-        if (class_exists('HCISYSQ\\Auth') && method_exists('HCISYSQ\\Auth', 'current_identity')) {
-            $identity = HCISYSQ\Auth::current_identity();
-        }
-
-        $is_hcis_logged_in = !empty($identity);
-
-        $show_login_button = $show_buttons && !$is_wp_user_logged_in && !$is_hcis_logged_in && '' !== $login_button_text;
+        $show_login_button = $show_buttons && !$is_wp_user_logged_in && '' !== $login_button_text;
         $show_main_button  = $show_buttons && '' !== $main_button_text && '' !== $main_button_url;
 
         if ($show_login_button || $show_main_button) :
