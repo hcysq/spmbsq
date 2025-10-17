@@ -388,7 +388,7 @@ function ysq_customize_register($wp_customize) {
     }
 
     $wp_customize->add_setting('footer_bottom_copy', array(
-        'default'           => '&copy; 2025 Yayasan Sabilul Qur\'an &bull; HCIS v1.0',
+        'default'           => '&copy; 2025 Yayasan Sabilul Qur\'an',
         'transport'         => 'refresh',
         'sanitize_callback' => 'wp_kses_post',
     ));

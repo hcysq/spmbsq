@@ -47,7 +47,7 @@
         ];
     }
 
-    $footer_bottom_default = '&copy; 2025 Yayasan Sabilul Qur\'an &bull; HCIS v1.0';
+    $footer_bottom_default = '&copy; 2025 Yayasan Sabilul Qur\'an';
     $footer_bottom_copy = get_theme_mod('footer_bottom_copy', null);
     if (null === $footer_bottom_copy) {
         $footer_bottom_copy = get_theme_mod('ysq_footer_copyright_text', $footer_bottom_default);
