@@ -1,0 +1,50 @@
+/*
+Theme Name: ysq-lp-theme
+Theme URI: https://example.com/themes/ysq-lp-theme
+Author: YSQ Team
+Author URI: https://example.com/
+Description: Lightweight landing page theme for YSQ conversion pages.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ysq-lp-theme
+Tags: landing-page, conversion
+*/
+
+:root {
+  --bg: #f7f7f8;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --brand: #0ea5e9;
+  --brand2: #14b8a6;
+  --ring: rgba(14, 165, 233, 0.35);
+  --radius: 14px;
+  --h1: clamp(2rem, 1.2rem + 2.8vw, 3rem);
+  --h2: clamp(1.5rem, 1rem + 2vw, 2.2rem);
+  --body: clamp(0.98rem, 0.9rem + 0.4vw, 1.06rem);
+  --space-1: clamp(8px, 1.2vw, 14px);
+  --space-2: clamp(12px, 1.6vw, 18px);
+  --space-3: clamp(16px, 2vw, 24px);
+  --space-4: clamp(24px, 3vw, 32px);
+  --space-5: clamp(32px, 4vw, 48px);
+  --space-6: clamp(48px, 6vw, 72px);
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: var(--body);
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none !important;
+}
