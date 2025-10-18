@@ -14,14 +14,15 @@ Tags: landing-page, conversion
 :root {
   --bg: #f7f7f8;
   --card: #ffffff;
-  --text: #1f2937;
+  --text: #0f172a;
   --muted: #6b7280;
   --brand: #0ea5e9;
   --brand2: #14b8a6;
   --ring: rgba(14, 165, 233, 0.35);
   --radius: 14px;
-  --h1: clamp(2rem, 1.2rem + 2.8vw, 3rem);
-  --h2: clamp(1.5rem, 1rem + 2vw, 2.2rem);
+  --h1: 32px;
+  --h2: 24px;
+  --h3: 20px;
   --body: clamp(0.98rem, 0.9rem + 0.4vw, 1.06rem);
   --space-1: clamp(8px, 1.2vw, 14px);
   --space-2: clamp(12px, 1.6vw, 18px);
@@ -33,11 +34,21 @@ Tags: landing-page, conversion
 
 body {
   margin: 0;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: system-ui, "Segoe UI", Roboto, "Inter", sans-serif;
   font-size: var(--body);
   line-height: 1.6;
   color: var(--text);
   background-color: var(--bg);
+}
+
+a {
+  color: #175887;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
 }
 
 img {
