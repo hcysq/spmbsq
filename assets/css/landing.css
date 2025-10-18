@@ -42,6 +42,13 @@ body.ysq-lp-body {
   box-sizing: border-box;
 }
 
+.content-wrapper {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
 .lp-section {
   padding: var(--space-5) var(--space-2);
 }

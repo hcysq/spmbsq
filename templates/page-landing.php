@@ -17,7 +17,7 @@ $pattern_html = function_exists( 'ysq_lp_get_landing_pattern_content' ) ? ysq_lp
 
 get_header();
 ?>
-<main class="ysq-lp-main" id="main-content">
+<main class="ysq-lp-main content-wrapper" id="main-content">
     <?php
     if ( have_posts() ) {
         while ( have_posts() ) {
