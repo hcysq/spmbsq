@@ -48,12 +48,12 @@ $pattern_html = function_exists( 'ysq_lp_get_landing_pattern_content' ) ? ysq_lp
             <span class="ysq-lp-sticky-cta__title"><?php esc_html_e( 'Siap bergabung?', 'ysq-lp-theme' ); ?></span>
             <div class="ysq-lp-sticky-cta__buttons">
                 <?php if ( ! empty( $cta_links['form'] ) ) : ?>
-                    <a class="btn btn-primary" href="<?php echo esc_url( $cta_links['form'] ); ?>" data-track="form">
+                    <a class="btn btn-primary cta-form-button" href="<?php echo esc_url( $cta_links['form'] ); ?>" data-track="form">
                         <?php esc_html_e( 'Isi Form Minat', 'ysq-lp-theme' ); ?>
                     </a>
                 <?php endif; ?>
                 <?php if ( ! empty( $cta_links['whatsapp'] ) ) : ?>
-                    <a class="btn btn-outline" href="<?php echo esc_url( $cta_links['whatsapp'] ); ?>" data-track="whatsapp" target="_blank" rel="noopener">
+                    <a class="btn btn-outline cta-wa-button" href="<?php echo esc_url( $cta_links['whatsapp'] ); ?>" data-track="whatsapp" target="_blank" rel="noopener">
                         <?php esc_html_e( 'Konsultasi WA', 'ysq-lp-theme' ); ?>
                     </a>
                 <?php endif; ?>
