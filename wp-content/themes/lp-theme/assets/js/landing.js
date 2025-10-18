@@ -1,6 +1,53 @@
 (function () {
   const stickyCta = document.querySelector('.ysq-lp-sticky-cta');
   const revealOffset = 180;
+  const formCtaSelector = '.cta-form-button';
+  const whatsappCtaSelector = '.cta-wa-button';
+
+  function trackFacebookEvent(eventName) {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', eventName);
+    }
+  }
+
+  function trackGaEvent(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+      return;
+    }
+
+    if (Array.isArray(window.dataLayer)) {
+      window.dataLayer.push(
+        Object.assign(
+          {
+            event: eventName,
+          },
+          params || {}
+        )
+      );
+    }
+  }
+
+  function bindCtaTracking() {
+    document.querySelectorAll(formCtaSelector).forEach(function (button) {
+      button.addEventListener('click', function () {
+        trackFacebookEvent('ClickCTA_Form');
+        trackGaEvent('ClickCTA_Form');
+      });
+    });
+
+    document.querySelectorAll(whatsappCtaSelector).forEach(function (button) {
+      button.addEventListener('click', function () {
+        trackFacebookEvent('ClickCTA_WA');
+        trackGaEvent('ClickCTA_WA');
+      });
+    });
+  }
+
+  function isThankYouPage() {
+    var path = window.location.pathname || '';
+    return path.replace(/\/+$/, '') === '/terima-kasih';
+  }
 
   function handleScroll() {
     if (!stickyCta) {
@@ -66,9 +113,16 @@
     document.querySelectorAll('a[data-scroll="smooth"]').forEach(function (anchor) {
       anchor.addEventListener('click', handleAnchorClick);
     });
+
+    bindCtaTracking();
+
+    if (isThankYouPage()) {
+      window.ysqLpLead();
+    }
   });
 
   window.ysqLpLead = function () {
-    console.log('lead');
+    trackFacebookEvent('Lead');
+    trackGaEvent('Lead');
   };
 })();

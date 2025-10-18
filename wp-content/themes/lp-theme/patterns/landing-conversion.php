@@ -25,11 +25,11 @@ $ysq_lp_pattern_content = <<<'HTML'
         <!-- wp:buttons {"className":"lp-cta-group"} -->
         <div class="wp-block-buttons lp-cta-group">
             <!-- wp:button {"className":"btn btn-primary","metadata":{"name":"Form CTA"}} -->
-            <div class="wp-block-button btn btn-primary"><a class="wp-block-button__link wp-element-button" href="#lp-form" data-scroll="smooth" data-cta-target="form">Isi Form Minat</a></div>
+            <div class="wp-block-button btn btn-primary"><a class="wp-block-button__link wp-element-button cta-form-button" href="#lp-form" data-scroll="smooth" data-cta-target="form">Isi Form Minat</a></div>
             <!-- /wp:button -->
 
             <!-- wp:button {"className":"btn btn-outline","metadata":{"name":"WhatsApp CTA"}} -->
-            <div class="wp-block-button btn btn-outline"><a class="wp-block-button__link wp-element-button" href="#lp-whatsapp" data-scroll="smooth" data-cta-target="whatsapp">Konsultasi WA</a></div>
+            <div class="wp-block-button btn btn-outline"><a class="wp-block-button__link wp-element-button cta-wa-button" href="#lp-whatsapp" data-scroll="smooth" data-cta-target="whatsapp">Konsultasi WA</a></div>
             <!-- /wp:button -->
         </div>
         <!-- /wp:buttons -->
@@ -235,7 +235,7 @@ https://www.youtube.com/watch?v=dQw4w9WgXcQ
         <!-- wp:buttons -->
         <div class="wp-block-buttons">
             <!-- wp:button {"className":"btn btn-primary"} -->
-            <div class="wp-block-button btn btn-primary"><a class="wp-block-button__link wp-element-button" href="#" target="_blank" rel="noopener" data-cta-target="form" onclick="window.ysqLpLead && window.ysqLpLead()">Isi Form Sekarang</a></div>
+            <div class="wp-block-button btn btn-primary"><a class="wp-block-button__link wp-element-button cta-form-button" href="#" target="_blank" rel="noopener" data-cta-target="form" onclick="window.ysqLpLead && window.ysqLpLead()">Isi Form Sekarang</a></div>
             <!-- /wp:button -->
         </div>
         <!-- /wp:buttons -->
@@ -259,7 +259,7 @@ https://www.youtube.com/watch?v=dQw4w9WgXcQ
         <!-- wp:buttons -->
         <div class="wp-block-buttons">
             <!-- wp:button {"className":"btn btn-outline"} -->
-            <div class="wp-block-button btn btn-outline"><a class="wp-block-button__link wp-element-button" href="#" target="_blank" rel="noopener" data-cta-target="whatsapp">Hubungi via WhatsApp</a></div>
+            <div class="wp-block-button btn btn-outline"><a class="wp-block-button__link wp-element-button cta-wa-button" href="#" target="_blank" rel="noopener" data-cta-target="whatsapp">Hubungi via WhatsApp</a></div>
             <!-- /wp:button -->
         </div>
         <!-- /wp:buttons -->
