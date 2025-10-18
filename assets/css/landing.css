@@ -217,6 +217,35 @@ body.ysq-lp-body {
   margin-bottom: var(--space-3);
 }
 
+.form-field input,
+.form-field textarea {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  color: inherit;
+  padding: 10px 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  width: 100%;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  background: #fff;
+  border-color: #175887;
+  box-shadow: 0 0 0 3px rgba(23, 88, 135, 0.25);
+  outline: none;
+}
+
+.form-field-inline {
+  align-items: center;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.form-field-inline > * {
+  flex: 1;
+}
+
 .ysq-lp-footer {
   background: rgba(15, 23, 42, 0.85);
   color: #fff;
@@ -316,6 +345,11 @@ body.ysq-lp-body {
 @media (max-width: 575px) {
   .grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  .form-field-inline {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .lp-section {
