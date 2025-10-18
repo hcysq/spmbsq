@@ -94,8 +94,12 @@ function ysq_lp_customize_register( $wp_customize ) {
             'label' => __( 'Footer Address', 'ysq-lp-theme' ),
             'type'  => 'textarea',
         ],
-        'footer_logo_url'  => [
+        'footer_logo_url'       => [
             'label' => __( 'Footer Logo URL', 'ysq-lp-theme' ),
+            'type'  => 'url',
+        ],
+        'footer_izin_badge_url' => [
+            'label' => __( 'Izin Operasional Badge URL', 'ysq-lp-theme' ),
             'type'  => 'url',
         ],
     ];

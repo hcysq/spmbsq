@@ -45,9 +45,13 @@ function ysq_lp_get_cta_links() {
  * @return array
  */
 function ysq_lp_get_footer_info() {
+    $yayasan_logo = esc_url( ysq_lp_get_option( 'footer_logo_url' ) );
+
     return [
-        'address' => wp_kses_post( ysq_lp_get_option( 'footer_address' ) ),
-        'logo'    => esc_url( ysq_lp_get_option( 'footer_logo_url' ) ),
+        'address'      => wp_kses_post( ysq_lp_get_option( 'footer_address' ) ),
+        'logo'         => $yayasan_logo,
+        'yayasan_logo' => $yayasan_logo,
+        'izin_badge'   => esc_url( ysq_lp_get_option( 'footer_izin_badge_url' ) ),
     ];
 }
 

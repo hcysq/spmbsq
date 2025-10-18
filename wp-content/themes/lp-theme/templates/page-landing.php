@@ -13,35 +13,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $cta_links    = ysq_lp_get_cta_links();
-$footer_info  = ysq_lp_get_footer_info();
 $pattern_html = function_exists( 'ysq_lp_get_landing_pattern_content' ) ? ysq_lp_get_landing_pattern_content() : '';
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<?php wp_head(); ?>
-</head>
-<body <?php body_class( 'ysq-lp-body' ); ?>>
-<?php wp_body_open(); ?>
-<div class="ysq-lp-page">
-    <main class="ysq-lp-main" id="main-content">
-        <?php
-        if ( have_posts() ) {
-            while ( have_posts() ) {
-                the_post();
 
-                $content = trim( get_the_content() );
+get_header();
+?>
+<main class="ysq-lp-main" id="main-content">
+    <?php
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
 
-                if ( '' === $content && $pattern_html ) {
-                    echo apply_filters( 'the_content', $pattern_html ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                } else {
-                    the_content();
-                }
+            $content = trim( get_the_content() );
+
+            if ( '' === $content && $pattern_html ) {
+                echo apply_filters( 'the_content', $pattern_html ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            } else {
+                the_content();
             }
         }
-        ?>
-    </main>
+    }
+    ?>
+</main>
 
     <aside class="ysq-lp-sticky-cta" role="complementary" aria-label="Quick actions">
         <div class="ysq-lp-sticky-cta__inner">
@@ -61,17 +53,5 @@ $pattern_html = function_exists( 'ysq_lp_get_landing_pattern_content' ) ? ysq_lp
         </div>
     </aside>
 
-    <footer class="ysq-lp-footer" role="contentinfo">
-        <div class="ysq-lp-footer__inner">
-            <?php if ( ! empty( $footer_info['logo'] ) ) : ?>
-                <img class="ysq-lp-footer__logo" src="<?php echo esc_url( $footer_info['logo'] ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-            <?php endif; ?>
-            <div class="ysq-lp-footer__address">
-                <?php echo wp_kses_post( $footer_info['address'] ); ?>
-            </div>
-        </div>
-    </footer>
-</div>
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php
+get_footer();
